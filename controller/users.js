@@ -13,8 +13,11 @@ const update = (req, res = response) => {
 }
 
 const store = (req, res = response) => {
+    const { name, age } = req.body
     res.json({
-        msg: 'post Api - Controller'
+        msg: 'post Api - Controller',
+        name,
+        age
     })
 }
 
