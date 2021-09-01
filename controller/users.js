@@ -1,4 +1,5 @@
 const { response } = require('express')
+const User = require('../models/user')
 
 const user = (req, res = response) => {
     res.json({
@@ -12,12 +13,13 @@ const update = (req, res = response) => {
     })
 }
 
-const store = (req, res = response) => {
-    const { name, age } = req.body
+const store = async(req, res = response) => {
+    const body = req.body
+    const user = new User(body);
+    await user.save()
     res.json({
         msg: 'post Api - Controller',
-        name,
-        age
+        user
     })
 }
 

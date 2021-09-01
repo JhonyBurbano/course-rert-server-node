@@ -26,7 +26,7 @@ const UserSchema = Schema({
         type: Boolean,
         default: true
     },
-    status: {
+    google: {
         type: Boolean,
         default: false
     },
